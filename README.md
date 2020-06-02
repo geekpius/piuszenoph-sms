@@ -30,6 +30,8 @@ This package is a PHP laravel package meant to send sms to all networks in Ghana
 Error codes https://smsonlinegh.com/download.php?file=http-sms-api
 
 ```php
+use ZenophSMSGH;
+
 /***** non personalised ****/
 // contact numbers. Each must be separated by a comma 
 $contacts = "0289348779,0581068534,0239597999";
