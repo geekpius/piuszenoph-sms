@@ -20,10 +20,10 @@ This package is a PHP laravel package meant to send sms to all networks in Ghana
   - Copy the following to config/app.php (if not available)
     - "providers": 
             [
-                "ZenophSmsGh\\Sms\\SmsServiceProvider"
+                "ZenophSmsGh\Sms\SmsServiceProvider::class,"
             ],
     - "aliases": {
-                "ZenophSMSGH": "ZenophSmsGh\\Sms\\Facades"
+                "'ZenophSMSGH' => ZenophSmsGh\Sms\Facades\ZenophSMSGH::class,"
             }
 
 ## Code Examples
@@ -35,16 +35,9 @@ use ZenophSMSGH;
 /***** non personalised ****/
 // contact numbers. Each must be separated by a comma 
 $contacts = "0289348779,0581068534,0239597999";
-$send = ZenophSMSGH::sendNonPersonalizedSms('username', 'password', 'PIUSGEEK','This is a developed laravel package to send sms',$contacts);
-$response = explode('@', $send);
-if($response[0]==1400){
-    // return success message
-    return 'Success Message';
-}
-else{
-    //return the caused error
-    return $response[1];
-} 
+$response = ZenophSMSGH::sendNonPersonalizedSms('username', 'password', 'PIUSGEEK','This is a developed laravel package to send sms',$contacts);
+///Note the response the returns are the RESP_CODE@RESP_VAL
+////Therefore, you can split and take RESP_CODE or RESP_VAL out for decision
 
 
 /***** other ****/
