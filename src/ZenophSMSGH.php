@@ -9,7 +9,7 @@ use Exception;
     class ZenophSMSGH
     {
         
-        public function sendNonPersonalizedSms(string $username, string $password, string $senderId, string $message, string $contacts)
+        public static function sendNonPersonalizedSms(string $username, string $password, string $senderId, string $message, string $contacts)
         {
             try{
                 // URL for sending message.
@@ -40,7 +40,7 @@ use Exception;
         
         }
 
-        public function sendPersonalizedSms(string $username, string $password, string $senderId, string $message, array $contacts)
+        public static function sendPersonalizedSms(string $username, string $password, string $senderId, string $message, array $contacts)
         {
             try{
                 define ('VALSEP', '__@');
@@ -102,7 +102,7 @@ use Exception;
         }
 
 
-        public function getBalance($username, $password)
+        public static function getBalance($username, $password)
         {
             try{
                 //URL for sending message.
