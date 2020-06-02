@@ -1,0 +1,34 @@
+{
+    "name": "piuszenoph/sms",
+    "description": "This package is to send sms to all networks in Ghana through Zenoph SMS GH server",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "T.K. Fiifi Pius",
+            "email": "fiifipius@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "ZenophSmsGh\\Sms\\": "src/"
+        }
+    },
+
+    "extra": {
+
+        "laravel": {
+            "providers": [
+                "ZenophSmsGh\\Sms\\SmsServiceProvider"
+            ],
+
+            "aliases": {
+                "ZenophSMSGH": "ZenophSmsGh\\Sms\\Facades"
+            }
+        }
+
+    }
+}
